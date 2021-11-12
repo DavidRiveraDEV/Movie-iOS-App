@@ -14,9 +14,26 @@
 		CD9F5D9E273EF931009AB887 /* iOSTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5D9C273EF931009AB887 /* iOSTest.xcdatamodeld */; };
 		CD9F5DA0273EF932009AB887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9F5D9F273EF932009AB887 /* Assets.xcassets */; };
 		CD9F5DA3273EF932009AB887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9F5DA1273EF932009AB887 /* LaunchScreen.storyboard */; };
-		CD9F5DAE273EF932009AB887 /* iOSTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DAD273EF932009AB887 /* iOSTestTests.swift */; };
 		CD9F5DB8273EF932009AB887 /* iOSTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DB7273EF932009AB887 /* iOSTestUITests.swift */; };
 		CD9F5DBA273EF932009AB887 /* iOSTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DB9273EF932009AB887 /* iOSTestUITestsLaunchTests.swift */; };
+		CD9F5DCF273EFB1C009AB887 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD9F5DCE273EFB1C009AB887 /* Alamofire */; };
+		CD9F5DD5273F2B82009AB887 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DD4273F2B82009AB887 /* HTTPClientTests.swift */; };
+		CD9F5DDC273F2DBE009AB887 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DDA273F2DBE009AB887 /* LoggerProtocol.swift */; };
+		CD9F5DDD273F2DBE009AB887 /* BasicLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DDB273F2DBE009AB887 /* BasicLogger.swift */; };
+		CD9F5DE6273F2E55009AB887 /* HTTPClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DE3273F2E55009AB887 /* HTTPClientProtocol.swift */; };
+		CD9F5DE7273F2E55009AB887 /* HTTPClientUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DE4273F2E55009AB887 /* HTTPClientUtil.swift */; };
+		CD9F5DE8273F2E55009AB887 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DE5273F2E55009AB887 /* HTTPClient.swift */; };
+		CD9F5DED273F2E6C009AB887 /* FailedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DE9273F2E6C009AB887 /* FailedResponse.swift */; };
+		CD9F5DEE273F2E6C009AB887 /* SuccessfulResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DEA273F2E6C009AB887 /* SuccessfulResponse.swift */; };
+		CD9F5DEF273F2E6C009AB887 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DEB273F2E6C009AB887 /* StatusCode.swift */; };
+		CD9F5DF0273F2E6C009AB887 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DEC273F2E6C009AB887 /* ResponseProtocol.swift */; };
+		CD9F5DF5273F2E8B009AB887 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DF1273F2E8B009AB887 /* HTTPHeader.swift */; };
+		CD9F5DF6273F2E8B009AB887 /* HTTPServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DF2273F2E8B009AB887 /* HTTPServiceProtocol.swift */; };
+		CD9F5DF7273F2E8B009AB887 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DF3273F2E8B009AB887 /* HTTPMethod.swift */; };
+		CD9F5DF8273F2E8B009AB887 /* AlamofireHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DF4273F2E8B009AB887 /* AlamofireHTTPService.swift */; };
+		CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */; };
+		CD9F5DFD273F2EA8009AB887 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */; };
+		CD9F5DFE273F2EA8009AB887 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +64,26 @@
 		CD9F5DA2273EF932009AB887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD9F5DA4273EF932009AB887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD9F5DA9273EF932009AB887 /* iOSTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD9F5DAD273EF932009AB887 /* iOSTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestTests.swift; sourceTree = "<group>"; };
 		CD9F5DB3273EF932009AB887 /* iOSTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9F5DB7273EF932009AB887 /* iOSTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestUITests.swift; sourceTree = "<group>"; };
 		CD9F5DB9273EF932009AB887 /* iOSTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD9F5DD4273F2B82009AB887 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		CD9F5DDA273F2DBE009AB887 /* LoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
+		CD9F5DDB273F2DBE009AB887 /* BasicLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicLogger.swift; sourceTree = "<group>"; };
+		CD9F5DE3273F2E55009AB887 /* HTTPClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientProtocol.swift; sourceTree = "<group>"; };
+		CD9F5DE4273F2E55009AB887 /* HTTPClientUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientUtil.swift; sourceTree = "<group>"; };
+		CD9F5DE5273F2E55009AB887 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		CD9F5DE9273F2E6C009AB887 /* FailedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedResponse.swift; sourceTree = "<group>"; };
+		CD9F5DEA273F2E6C009AB887 /* SuccessfulResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessfulResponse.swift; sourceTree = "<group>"; };
+		CD9F5DEB273F2E6C009AB887 /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		CD9F5DEC273F2E6C009AB887 /* ResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		CD9F5DF1273F2E8B009AB887 /* HTTPHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		CD9F5DF2273F2E8B009AB887 /* HTTPServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPServiceProtocol.swift; sourceTree = "<group>"; };
+		CD9F5DF3273F2E8B009AB887 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		CD9F5DF4273F2E8B009AB887 /* AlamofireHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHTTPService.swift; sourceTree = "<group>"; };
+		CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F5DCF273EFB1C009AB887 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +135,8 @@
 		CD9F5D92273EF931009AB887 /* iOSTest */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F5DC6273EF998009AB887 /* Service */,
+				CD9F5DD6273F2D43009AB887 /* Common */,
 				CD9F5D93273EF931009AB887 /* AppDelegate.swift */,
 				CD9F5D95273EF931009AB887 /* SceneDelegate.swift */,
 				CD9F5D97273EF931009AB887 /* ViewController.swift */,
@@ -116,7 +152,7 @@
 		CD9F5DAC273EF932009AB887 /* iOSTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD9F5DAD273EF932009AB887 /* iOSTestTests.swift */,
+				CD9F5DD4273F2B82009AB887 /* HTTPClientTests.swift */,
 			);
 			path = iOSTestTests;
 			sourceTree = "<group>";
@@ -128,6 +164,84 @@
 				CD9F5DB9273EF932009AB887 /* iOSTestUITestsLaunchTests.swift */,
 			);
 			path = iOSTestUITests;
+			sourceTree = "<group>";
+		};
+		CD9F5DC6273EF998009AB887 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DDE273F2DE3009AB887 /* HTTP */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CD9F5DD6273F2D43009AB887 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DE2273F2E33009AB887 /* Extensions */,
+				CD9F5DD7273F2D55009AB887 /* Logger */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CD9F5DD7273F2D55009AB887 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DDB273F2DBE009AB887 /* BasicLogger.swift */,
+				CD9F5DDA273F2DBE009AB887 /* LoggerProtocol.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		CD9F5DDE273F2DE3009AB887 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DDF273F2DEF009AB887 /* HTTPClient */,
+				CD9F5DE0273F2DFB009AB887 /* HTTPService */,
+				CD9F5DE1273F2E0E009AB887 /* HTTPResponse */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		CD9F5DDF273F2DEF009AB887 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DE5273F2E55009AB887 /* HTTPClient.swift */,
+				CD9F5DE3273F2E55009AB887 /* HTTPClientProtocol.swift */,
+				CD9F5DE4273F2E55009AB887 /* HTTPClientUtil.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		CD9F5DE0273F2DFB009AB887 /* HTTPService */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DF4273F2E8B009AB887 /* AlamofireHTTPService.swift */,
+				CD9F5DF1273F2E8B009AB887 /* HTTPHeader.swift */,
+				CD9F5DF3273F2E8B009AB887 /* HTTPMethod.swift */,
+				CD9F5DF2273F2E8B009AB887 /* HTTPServiceProtocol.swift */,
+			);
+			path = HTTPService;
+			sourceTree = "<group>";
+		};
+		CD9F5DE1273F2E0E009AB887 /* HTTPResponse */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DE9273F2E6C009AB887 /* FailedResponse.swift */,
+				CD9F5DEC273F2E6C009AB887 /* ResponseProtocol.swift */,
+				CD9F5DEB273F2E6C009AB887 /* StatusCode.swift */,
+				CD9F5DEA273F2E6C009AB887 /* SuccessfulResponse.swift */,
+			);
+			path = HTTPResponse;
+			sourceTree = "<group>";
+		};
+		CD9F5DE2273F2E33009AB887 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */,
+				CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */,
+				CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +260,9 @@
 			dependencies = (
 			);
 			name = iOSTest;
+			packageProductDependencies = (
+				CD9F5DCE273EFB1C009AB887 /* Alamofire */,
+			);
 			productName = iOSTest;
 			productReference = CD9F5D90273EF931009AB887 /* iOSTest.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +335,9 @@
 				Base,
 			);
 			mainGroup = CD9F5D87273EF931009AB887;
+			packageReferences = (
+				CD9F5DCD273EFB1C009AB887 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CD9F5D91273EF931009AB887 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,9 +381,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F5DE6273F2E55009AB887 /* HTTPClientProtocol.swift in Sources */,
+				CD9F5DEE273F2E6C009AB887 /* SuccessfulResponse.swift in Sources */,
+				CD9F5DEF273F2E6C009AB887 /* StatusCode.swift in Sources */,
+				CD9F5DED273F2E6C009AB887 /* FailedResponse.swift in Sources */,
+				CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */,
 				CD9F5D98273EF931009AB887 /* ViewController.swift in Sources */,
+				CD9F5DDC273F2DBE009AB887 /* LoggerProtocol.swift in Sources */,
+				CD9F5DDD273F2DBE009AB887 /* BasicLogger.swift in Sources */,
+				CD9F5DE7273F2E55009AB887 /* HTTPClientUtil.swift in Sources */,
+				CD9F5DFE273F2EA8009AB887 /* Data+Extensions.swift in Sources */,
+				CD9F5DF8273F2E8B009AB887 /* AlamofireHTTPService.swift in Sources */,
+				CD9F5DE8273F2E55009AB887 /* HTTPClient.swift in Sources */,
 				CD9F5D94273EF931009AB887 /* AppDelegate.swift in Sources */,
+				CD9F5DF6273F2E8B009AB887 /* HTTPServiceProtocol.swift in Sources */,
 				CD9F5D96273EF931009AB887 /* SceneDelegate.swift in Sources */,
+				CD9F5DF7273F2E8B009AB887 /* HTTPMethod.swift in Sources */,
+				CD9F5DF0273F2E6C009AB887 /* ResponseProtocol.swift in Sources */,
+				CD9F5DF5273F2E8B009AB887 /* HTTPHeader.swift in Sources */,
+				CD9F5DFD273F2EA8009AB887 /* Array+Extensions.swift in Sources */,
 				CD9F5D9E273EF931009AB887 /* iOSTest.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9F5DAE273EF932009AB887 /* iOSTestTests.swift in Sources */,
+				CD9F5DD5273F2B82009AB887 /* HTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +758,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD9F5DCD273EFB1C009AB887 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD9F5DCE273EFB1C009AB887 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9F5DCD273EFB1C009AB887 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CD9F5D9C273EF931009AB887 /* iOSTest.xcdatamodeld */ = {
