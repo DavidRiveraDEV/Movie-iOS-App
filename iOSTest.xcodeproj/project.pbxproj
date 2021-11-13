@@ -44,9 +44,12 @@
 		CD9F5E1A273F5896009AB887 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E13273F5896009AB887 /* HomeInteractor.swift */; };
 		CD9F5E1B273F5896009AB887 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E14273F5896009AB887 /* HomeView.swift */; };
 		CD9F5E1C273F5896009AB887 /* HomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E15273F5896009AB887 /* HomeRemoteDataManager.swift */; };
-		CD9F5E25273F5FC0009AB887 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E24273F5FC0009AB887 /* MovieService.swift */; };
+		CD9F5E25273F5FC0009AB887 /* RemoteMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E24273F5FC0009AB887 /* RemoteMovieService.swift */; };
 		CD9F5E28273F76F8009AB887 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E27273F76F8009AB887 /* MoviesResponse.swift */; };
 		CD9F5E2A273F7B2B009AB887 /* HomeLocalDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E29273F7B2B009AB887 /* HomeLocalDataManagerTests.swift */; };
+		CD9F5E2C273F7F74009AB887 /* LocalMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E2B273F7F74009AB887 /* LocalMovieService.swift */; };
+		CD9F5E2E273F8107009AB887 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E2D273F8107009AB887 /* MovieService.swift */; };
+		CD9F5E30273F8169009AB887 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E2F273F8169009AB887 /* HomeDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,9 +110,12 @@
 		CD9F5E13273F5896009AB887 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		CD9F5E14273F5896009AB887 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CD9F5E15273F5896009AB887 /* HomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManager.swift; sourceTree = "<group>"; };
-		CD9F5E24273F5FC0009AB887 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		CD9F5E24273F5FC0009AB887 /* RemoteMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMovieService.swift; sourceTree = "<group>"; };
 		CD9F5E27273F76F8009AB887 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
 		CD9F5E29273F7B2B009AB887 /* HomeLocalDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDataManagerTests.swift; sourceTree = "<group>"; };
+		CD9F5E2B273F7F74009AB887 /* LocalMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMovieService.swift; sourceTree = "<group>"; };
+		CD9F5E2D273F8107009AB887 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		CD9F5E2F273F8169009AB887 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +315,7 @@
 				CD9F5E0F273F5896009AB887 /* HomePresenter.swift */,
 				CD9F5E13273F5896009AB887 /* HomeInteractor.swift */,
 				CD9F5E11273F5896009AB887 /* HomeRouter.swift */,
+				CD9F5E2F273F8169009AB887 /* HomeDataManager.swift */,
 				CD9F5E10273F5896009AB887 /* HomeLocalDataManager.swift */,
 				CD9F5E15273F5896009AB887 /* HomeRemoteDataManager.swift */,
 			);
@@ -318,7 +325,9 @@
 		CD9F5E26273F6096009AB887 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				CD9F5E24273F5FC0009AB887 /* MovieService.swift */,
+				CD9F5E2D273F8107009AB887 /* MovieService.swift */,
+				CD9F5E2B273F7F74009AB887 /* LocalMovieService.swift */,
+				CD9F5E24273F5FC0009AB887 /* RemoteMovieService.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -468,6 +477,7 @@
 				CD9F5E07273F3E02009AB887 /* RemoteDataManagerSettings.swift in Sources */,
 				CD9F5DED273F2E6C009AB887 /* FailedResponse.swift in Sources */,
 				CD9F5E1A273F5896009AB887 /* HomeInteractor.swift in Sources */,
+				CD9F5E30273F8169009AB887 /* HomeDataManager.swift in Sources */,
 				CD9F5E19273F5896009AB887 /* HomeProtocols.swift in Sources */,
 				CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */,
 				CD9F5D98273EF931009AB887 /* ViewController.swift in Sources */,
@@ -479,7 +489,9 @@
 				CD9F5DE8273F2E55009AB887 /* HTTPClient.swift in Sources */,
 				CD9F5E18273F5896009AB887 /* HomeRouter.swift in Sources */,
 				CD9F5E17273F5896009AB887 /* HomeLocalDataManager.swift in Sources */,
-				CD9F5E25273F5FC0009AB887 /* MovieService.swift in Sources */,
+				CD9F5E25273F5FC0009AB887 /* RemoteMovieService.swift in Sources */,
+				CD9F5E2C273F7F74009AB887 /* LocalMovieService.swift in Sources */,
+				CD9F5E2E273F8107009AB887 /* MovieService.swift in Sources */,
 				CD9F5E1C273F5896009AB887 /* HomeRemoteDataManager.swift in Sources */,
 				CD9F5D94273EF931009AB887 /* AppDelegate.swift in Sources */,
 				CD9F5E28273F76F8009AB887 /* MoviesResponse.swift in Sources */,
