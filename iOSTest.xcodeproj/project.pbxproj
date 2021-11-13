@@ -34,6 +34,9 @@
 		CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */; };
 		CD9F5DFD273F2EA8009AB887 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */; };
 		CD9F5DFE273F2EA8009AB887 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */; };
+		CD9F5E07273F3E02009AB887 /* RemoteDataManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E06273F3E02009AB887 /* RemoteDataManagerSettings.swift */; };
+		CD9F5E09273F3F0E009AB887 /* MovieDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E08273F3F0E009AB887 /* MovieDataManagerTests.swift */; };
+		CD9F5E0C273F3F56009AB887 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E0B273F3F56009AB887 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		CD9F5E06273F3E02009AB887 /* RemoteDataManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManagerSettings.swift; sourceTree = "<group>"; };
+		CD9F5E08273F3F0E009AB887 /* MovieDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataManagerTests.swift; sourceTree = "<group>"; };
+		CD9F5E0B273F3F56009AB887 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,8 @@
 		CD9F5D92273EF931009AB887 /* iOSTest */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F5E0A273F3F2E009AB887 /* Entity */,
+				CD9F5E05273F3DEE009AB887 /* Settings */,
 				CD9F5DC6273EF998009AB887 /* Service */,
 				CD9F5DD6273F2D43009AB887 /* Common */,
 				CD9F5D93273EF931009AB887 /* AppDelegate.swift */,
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CD9F5DD4273F2B82009AB887 /* HTTPClientTests.swift */,
+				CD9F5E08273F3F0E009AB887 /* MovieDataManagerTests.swift */,
 			);
 			path = iOSTestTests;
 			sourceTree = "<group>";
@@ -242,6 +251,22 @@
 				CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD9F5E05273F3DEE009AB887 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5E06273F3E02009AB887 /* RemoteDataManagerSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CD9F5E0A273F3F2E009AB887 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5E0B273F3F56009AB887 /* Movie.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +409,7 @@
 				CD9F5DE6273F2E55009AB887 /* HTTPClientProtocol.swift in Sources */,
 				CD9F5DEE273F2E6C009AB887 /* SuccessfulResponse.swift in Sources */,
 				CD9F5DEF273F2E6C009AB887 /* StatusCode.swift in Sources */,
+				CD9F5E07273F3E02009AB887 /* RemoteDataManagerSettings.swift in Sources */,
 				CD9F5DED273F2E6C009AB887 /* FailedResponse.swift in Sources */,
 				CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */,
 				CD9F5D98273EF931009AB887 /* ViewController.swift in Sources */,
@@ -400,6 +426,7 @@
 				CD9F5DF0273F2E6C009AB887 /* ResponseProtocol.swift in Sources */,
 				CD9F5DF5273F2E8B009AB887 /* HTTPHeader.swift in Sources */,
 				CD9F5DFD273F2EA8009AB887 /* Array+Extensions.swift in Sources */,
+				CD9F5E0C273F3F56009AB887 /* Movie.swift in Sources */,
 				CD9F5D9E273EF931009AB887 /* iOSTest.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F5E09273F3F0E009AB887 /* MovieDataManagerTests.swift in Sources */,
 				CD9F5DD5273F2B82009AB887 /* HTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
