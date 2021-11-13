@@ -34,23 +34,20 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 protocol HomeInteractorInputProtocol: AnyObject {
     
     var presenter: HomeInteractorOutputProtocol? { get set }
-    var localDatamanager: HomeLocalDataManagerInputProtocol? { get set }
-    var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
+    var localDatamanager: HomeDataManagerInputProtocol? { get set }
+    var remoteDatamanager: HomeDataManagerInputProtocol? { get set }
 }
 
 protocol HomeDataManagerInputProtocol: AnyObject {
+    
+    var dataManagerRequestHandler: HomeDataManagerOutputProtocol? { get set }
     
     func getPopularMovies()
     func getTopRatedMovies()
     func getUpcomingMovies()
 }
 
-protocol HomeRemoteDataManagerInputProtocol: HomeDataManagerInputProtocol {
-    
-    var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
-}
-
-protocol HomeRemoteDataManagerOutputProtocol: AnyObject {
+protocol HomeDataManagerOutputProtocol: AnyObject {
     
     func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse)
     func onPopularMoviesError(_ response: FailedResponse)
@@ -58,8 +55,4 @@ protocol HomeRemoteDataManagerOutputProtocol: AnyObject {
     func onTopRatedMoviesError(_ response: FailedResponse)
     func onUpcomingMoviesSuccess(_ moviesResponse: MoviesResponse)
     func onUpcomingMoviesError(_ response: FailedResponse)
-}
-
-protocol HomeLocalDataManagerInputProtocol: HomeDataManagerInputProtocol {
-
 }

@@ -11,11 +11,11 @@ import Foundation
 class HomeInteractor: HomeInteractorInputProtocol {    
     
     weak var presenter: HomeInteractorOutputProtocol?
-    var localDatamanager: HomeLocalDataManagerInputProtocol?
-    var remoteDatamanager: HomeRemoteDataManagerInputProtocol?
+    var localDatamanager: HomeDataManagerInputProtocol?
+    var remoteDatamanager: HomeDataManagerInputProtocol?
 }
 
-extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
+extension HomeInteractor: HomeDataManagerOutputProtocol {
     
     func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse) {
     }

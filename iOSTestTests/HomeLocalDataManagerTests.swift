@@ -1,5 +1,5 @@
 //
-//  HomeRemoteDataManagerTests.swift
+//  HomeLocalDataManagerTests.swift
 //  iOSTestTests
 //
 //  Created by David Rivera on 12/11/21.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import iOSTest
 
-class HomeRemoteDataManagerTests: XCTestCase {
+class HomeLocalDataManagerTests: XCTestCase {
     
-    private var sut: HomeRemoteDataManager!
+    private var sut: HomeLocalDataManager!
     
     private var popularMoviesExpectation: XCTestExpectation!
     private var topRatedMoviesExpectation: XCTestExpectation!
@@ -18,7 +18,7 @@ class HomeRemoteDataManagerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        self.sut = HomeRemoteDataManager()
+        self.sut = HomeLocalDataManager()
         self.sut.dataManagerRequestHandler = self
     }
 
@@ -52,7 +52,7 @@ class HomeRemoteDataManagerTests: XCTestCase {
     }
 }
 
-extension HomeRemoteDataManagerTests: HomeDataManagerOutputProtocol {
+extension HomeLocalDataManagerTests: HomeDataManagerOutputProtocol {
     
     func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse) {
         XCTAssertNotNil(moviesResponse)

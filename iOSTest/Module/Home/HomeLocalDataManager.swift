@@ -8,7 +8,10 @@
 
 import Foundation
 
-class HomeLocalDataManager: HomeLocalDataManagerInputProtocol {
+class HomeLocalDataManager: HomeDataManagerInputProtocol {
+    
+    var dataManagerRequestHandler: HomeDataManagerOutputProtocol?
+    
     
     func getPopularMovies() {
         

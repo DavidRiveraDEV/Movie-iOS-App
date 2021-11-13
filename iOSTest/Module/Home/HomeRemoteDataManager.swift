@@ -11,7 +11,7 @@ import SwiftUI
 
 class HomeRemoteDataManager {
     
-    var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol?
+    var dataManagerRequestHandler: HomeDataManagerOutputProtocol?
     
     var movieService: MovieService
     
@@ -20,30 +20,30 @@ class HomeRemoteDataManager {
     }
 }
 
-extension HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
+extension HomeRemoteDataManager: HomeDataManagerInputProtocol {
     
     func getPopularMovies() {
         self.movieService.getPopularMovies { [weak self] movies in
-            self?.remoteRequestHandler?.onPopularMoviesSuccess(movies)
+            self?.dataManagerRequestHandler?.onPopularMoviesSuccess(movies)
         } onFailed: { [weak self] response in
-            self?.remoteRequestHandler?.onPopularMoviesError(response)
+            self?.dataManagerRequestHandler?.onPopularMoviesError(response)
         }
 
     }
     
     func getTopRatedMovies() {
         self.movieService.getTopRatedMovies { [weak self] movies in
-            self?.remoteRequestHandler?.onTopRatedMoviesSuccess(movies)
+            self?.dataManagerRequestHandler?.onTopRatedMoviesSuccess(movies)
         } onFailed: { [weak self] response in
-            self?.remoteRequestHandler?.onTopRatedMoviesError(response)
+            self?.dataManagerRequestHandler?.onTopRatedMoviesError(response)
         }
     }
     
     func getUpcomingMovies() {
         self.movieService.getUpcomingMovies { [weak self] movies in
-            self?.remoteRequestHandler?.onUpcomingMoviesSuccess(movies)
+            self?.dataManagerRequestHandler?.onUpcomingMoviesSuccess(movies)
         } onFailed: { [weak self] response in
-            self?.remoteRequestHandler?.onUpcomingMoviesError(response)
+            self?.dataManagerRequestHandler?.onUpcomingMoviesError(response)
         }
     }
 }
