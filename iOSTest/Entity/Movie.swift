@@ -9,12 +9,12 @@ import Foundation
 
 struct Movie: Codable {
     
-    var id: Int
-    var title: String
-    var overview: String
-    var status: String
-    var releaseDate: String
-    var popularity: Float
+    var id: Int?
+    var title: String?
+    var overview: String?
+    var status: String?
+    var releaseDate: String?
+    var popularity: Float?
     var posterPath: String?
     var backdropPath: String?
     

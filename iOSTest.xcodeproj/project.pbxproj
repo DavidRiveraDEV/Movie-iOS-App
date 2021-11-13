@@ -35,8 +35,17 @@
 		CD9F5DFD273F2EA8009AB887 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */; };
 		CD9F5DFE273F2EA8009AB887 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */; };
 		CD9F5E07273F3E02009AB887 /* RemoteDataManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E06273F3E02009AB887 /* RemoteDataManagerSettings.swift */; };
-		CD9F5E09273F3F0E009AB887 /* MovieDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E08273F3F0E009AB887 /* MovieDataManagerTests.swift */; };
+		CD9F5E09273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E08273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift */; };
 		CD9F5E0C273F3F56009AB887 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E0B273F3F56009AB887 /* Movie.swift */; };
+		CD9F5E16273F5896009AB887 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E0F273F5896009AB887 /* HomePresenter.swift */; };
+		CD9F5E17273F5896009AB887 /* HomeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E10273F5896009AB887 /* HomeLocalDataManager.swift */; };
+		CD9F5E18273F5896009AB887 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E11273F5896009AB887 /* HomeRouter.swift */; };
+		CD9F5E19273F5896009AB887 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E12273F5896009AB887 /* HomeProtocols.swift */; };
+		CD9F5E1A273F5896009AB887 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E13273F5896009AB887 /* HomeInteractor.swift */; };
+		CD9F5E1B273F5896009AB887 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E14273F5896009AB887 /* HomeView.swift */; };
+		CD9F5E1C273F5896009AB887 /* HomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E15273F5896009AB887 /* HomeRemoteDataManager.swift */; };
+		CD9F5E25273F5FC0009AB887 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E24273F5FC0009AB887 /* MovieService.swift */; };
+		CD9F5E28273F76F8009AB887 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E27273F76F8009AB887 /* MoviesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +97,17 @@
 		CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5E06273F3E02009AB887 /* RemoteDataManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManagerSettings.swift; sourceTree = "<group>"; };
-		CD9F5E08273F3F0E009AB887 /* MovieDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataManagerTests.swift; sourceTree = "<group>"; };
+		CD9F5E08273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManagerTests.swift; sourceTree = "<group>"; };
 		CD9F5E0B273F3F56009AB887 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CD9F5E0F273F5896009AB887 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CD9F5E10273F5896009AB887 /* HomeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDataManager.swift; sourceTree = "<group>"; };
+		CD9F5E11273F5896009AB887 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CD9F5E12273F5896009AB887 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		CD9F5E13273F5896009AB887 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		CD9F5E14273F5896009AB887 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CD9F5E15273F5896009AB887 /* HomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManager.swift; sourceTree = "<group>"; };
+		CD9F5E24273F5FC0009AB887 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		CD9F5E27273F76F8009AB887 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +159,7 @@
 		CD9F5D92273EF931009AB887 /* iOSTest */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F5E0D273F563C009AB887 /* Module */,
 				CD9F5E0A273F3F2E009AB887 /* Entity */,
 				CD9F5E05273F3DEE009AB887 /* Settings */,
 				CD9F5DC6273EF998009AB887 /* Service */,
@@ -161,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CD9F5DD4273F2B82009AB887 /* HTTPClientTests.swift */,
-				CD9F5E08273F3F0E009AB887 /* MovieDataManagerTests.swift */,
+				CD9F5E08273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift */,
 			);
 			path = iOSTestTests;
 			sourceTree = "<group>";
@@ -179,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				CD9F5DDE273F2DE3009AB887 /* HTTP */,
+				CD9F5E26273F6096009AB887 /* Movie */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -264,9 +284,40 @@
 		CD9F5E0A273F3F2E009AB887 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F5E27273F76F8009AB887 /* MoviesResponse.swift */,
 				CD9F5E0B273F3F56009AB887 /* Movie.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD9F5E0D273F563C009AB887 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5E0E273F585D009AB887 /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CD9F5E0E273F585D009AB887 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5E12273F5896009AB887 /* HomeProtocols.swift */,
+				CD9F5E14273F5896009AB887 /* HomeView.swift */,
+				CD9F5E0F273F5896009AB887 /* HomePresenter.swift */,
+				CD9F5E13273F5896009AB887 /* HomeInteractor.swift */,
+				CD9F5E11273F5896009AB887 /* HomeRouter.swift */,
+				CD9F5E10273F5896009AB887 /* HomeLocalDataManager.swift */,
+				CD9F5E15273F5896009AB887 /* HomeRemoteDataManager.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CD9F5E26273F6096009AB887 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F5E24273F5FC0009AB887 /* MovieService.swift */,
+			);
+			path = Movie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,10 +458,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9F5DE6273F2E55009AB887 /* HTTPClientProtocol.swift in Sources */,
+				CD9F5E1B273F5896009AB887 /* HomeView.swift in Sources */,
 				CD9F5DEE273F2E6C009AB887 /* SuccessfulResponse.swift in Sources */,
+				CD9F5E16273F5896009AB887 /* HomePresenter.swift in Sources */,
 				CD9F5DEF273F2E6C009AB887 /* StatusCode.swift in Sources */,
 				CD9F5E07273F3E02009AB887 /* RemoteDataManagerSettings.swift in Sources */,
 				CD9F5DED273F2E6C009AB887 /* FailedResponse.swift in Sources */,
+				CD9F5E1A273F5896009AB887 /* HomeInteractor.swift in Sources */,
+				CD9F5E19273F5896009AB887 /* HomeProtocols.swift in Sources */,
 				CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */,
 				CD9F5D98273EF931009AB887 /* ViewController.swift in Sources */,
 				CD9F5DDC273F2DBE009AB887 /* LoggerProtocol.swift in Sources */,
@@ -419,7 +474,12 @@
 				CD9F5DFE273F2EA8009AB887 /* Data+Extensions.swift in Sources */,
 				CD9F5DF8273F2E8B009AB887 /* AlamofireHTTPService.swift in Sources */,
 				CD9F5DE8273F2E55009AB887 /* HTTPClient.swift in Sources */,
+				CD9F5E18273F5896009AB887 /* HomeRouter.swift in Sources */,
+				CD9F5E17273F5896009AB887 /* HomeLocalDataManager.swift in Sources */,
+				CD9F5E25273F5FC0009AB887 /* MovieService.swift in Sources */,
+				CD9F5E1C273F5896009AB887 /* HomeRemoteDataManager.swift in Sources */,
 				CD9F5D94273EF931009AB887 /* AppDelegate.swift in Sources */,
+				CD9F5E28273F76F8009AB887 /* MoviesResponse.swift in Sources */,
 				CD9F5DF6273F2E8B009AB887 /* HTTPServiceProtocol.swift in Sources */,
 				CD9F5D96273EF931009AB887 /* SceneDelegate.swift in Sources */,
 				CD9F5DF7273F2E8B009AB887 /* HTTPMethod.swift in Sources */,
@@ -435,7 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9F5E09273F3F0E009AB887 /* MovieDataManagerTests.swift in Sources */,
+				CD9F5E09273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift in Sources */,
 				CD9F5DD5273F2B82009AB887 /* HTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

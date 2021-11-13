@@ -95,6 +95,7 @@ public class HTTPClient: HTTPClientProtocol {
             let responseString = String(decoding: data, as: UTF8.self)
             details = ["response" : responseString]
         }
+        print(error)
         onFailed(FailedResponse(statusCode: StatusCode.unprocessableEntity, description: error.localizedDescription, details: details))
     }
     
