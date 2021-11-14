@@ -25,4 +25,15 @@ extension HomePresenter: HomePresenterProtocol {
 
 extension HomePresenter: HomeInteractorOutputProtocol {
     
+    func updatePopularMovies(_ movies: [Movie]) {
+        
+    }
+    
+    func updateTopRatedMovies(_ movies: [Movie]) {
+        
+    }
+    
+    func updateUpcomingMovies(_ movies: [Movie]) {
+        
+    }
 }

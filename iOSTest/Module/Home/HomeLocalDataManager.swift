@@ -8,17 +8,46 @@
 
 import Foundation
 
-class HomeLocalDataManager: HomeDataManager {
+class HomeLocalDataManager {
+    
+    var dataManagerRequestHandler: HomeLocalDataManagerOutputProtocol?
     
     let localMovieService: LocalMovieService
     
     init() {
         self.localMovieService = LocalMovieService()
-        super.init(movieService: localMovieService)
     }
+}
+
+extension HomeLocalDataManager: HomeLocalDataManagerInputProtocol {
     
     func saveMovies(_ movies: [Movie]) -> Bool {
         return self.localMovieService.saveMovies(movies)
+    }
+    
+    func getPopularMovies() {
+        self.localMovieService.getPopularMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onPopularMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onPopularMoviesError(response)
+        }
+
+    }
+    
+    func getTopRatedMovies() {
+        self.localMovieService.getTopRatedMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onTopRatedMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onTopRatedMoviesError(response)
+        }
+    }
+    
+    func getUpcomingMovies() {
+        self.localMovieService.getUpcomingMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onUpcomingMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onUpcomingMoviesError(response)
+        }
     }
     
     func clearPopularMovies() {
@@ -33,3 +62,4 @@ class HomeLocalDataManager: HomeDataManager {
         self.localMovieService.clearUpcomingMovies()
     }
 }
+

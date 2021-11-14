@@ -10,7 +10,7 @@ import XCTest
 
 class HomeRemoteDataManagerTests: XCTestCase {
     
-    private var sut: HomeRemoteDataManager!
+    private var sut: HomeRemoteDataManagerInputProtocol!
     
     private var popularMoviesExpectation: XCTestExpectation!
     private var topRatedMoviesExpectation: XCTestExpectation!
@@ -52,7 +52,7 @@ class HomeRemoteDataManagerTests: XCTestCase {
     }
 }
 
-extension HomeRemoteDataManagerTests: HomeDataManagerOutputProtocol {
+extension HomeRemoteDataManagerTests: HomeRemoteDataManagerOutputProtocol {
     
     func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse) {
         XCTAssertNotNil(moviesResponse)

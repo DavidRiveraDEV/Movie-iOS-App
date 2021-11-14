@@ -29,18 +29,23 @@ protocol HomePresenterProtocol: AnyObject {
 
 protocol HomeInteractorOutputProtocol: AnyObject {
     
+    func updatePopularMovies(_ movies: [Movie])
+    func updateTopRatedMovies(_ movies: [Movie])
+    func updateUpcomingMovies(_ movies: [Movie])
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {
     
     var presenter: HomeInteractorOutputProtocol? { get set }
-    var localDatamanager: HomeDataManagerInputProtocol? { get set }
-    var remoteDatamanager: HomeDataManagerInputProtocol? { get set }
+    var localDatamanager: HomeLocalDataManagerInputProtocol? { get set }
+    var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
+    
+    func getPopularMovies()
+    func getTopRatedMovies()
+    func getUpcomingMovies()
 }
 
 protocol HomeDataManagerInputProtocol: AnyObject {
-    
-    var dataManagerRequestHandler: HomeDataManagerOutputProtocol? { get set }
     
     func getPopularMovies()
     func getTopRatedMovies()
@@ -55,4 +60,27 @@ protocol HomeDataManagerOutputProtocol: AnyObject {
     func onTopRatedMoviesError(_ response: FailedResponse)
     func onUpcomingMoviesSuccess(_ moviesResponse: MoviesResponse)
     func onUpcomingMoviesError(_ response: FailedResponse)
+}
+
+protocol HomeRemoteDataManagerInputProtocol: HomeDataManagerInputProtocol {
+    
+    var dataManagerRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
+}
+
+protocol HomeRemoteDataManagerOutputProtocol: HomeDataManagerOutputProtocol {
+    
+}
+
+protocol HomeLocalDataManagerInputProtocol: HomeDataManagerInputProtocol {
+    
+    var dataManagerRequestHandler: HomeLocalDataManagerOutputProtocol? { get set }
+    
+    func saveMovies(_ movies: [Movie]) -> Bool
+    func clearPopularMovies()
+    func clearTopRatedMovies()
+    func clearUpcomingMovies()
+}
+
+protocol HomeLocalDataManagerOutputProtocol: HomeDataManagerOutputProtocol {
+    
 }

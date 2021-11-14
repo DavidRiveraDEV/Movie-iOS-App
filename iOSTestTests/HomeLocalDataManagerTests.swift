@@ -10,7 +10,7 @@ import XCTest
 
 class HomeLocalDataManagerTests: XCTestCase {
     
-    private var sut: HomeLocalDataManager!
+    private var sut: HomeLocalDataManagerInputProtocol!
     
     private var popularMoviesExpectation: XCTestExpectation!
     private var topRatedMoviesExpectation: XCTestExpectation!
@@ -49,48 +49,6 @@ class HomeLocalDataManagerTests: XCTestCase {
         upcomingMoviesExpectation = expectation(description: "testGetUpcomingMoviesSuccessful")
         self.sut.getUpcomingMovies()
         waitForExpectations(timeout: 5, handler: nil)
-    }
-}
-
-extension HomeLocalDataManagerTests: HomeDataManagerOutputProtocol {
-    
-    func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse) {
-        XCTAssertNotNil(moviesResponse)
-        let movies = moviesResponse.movies
-        XCTAssertNotNil(movies)
-        XCTAssert(!movies!.isEmpty)
-        self.popularMoviesExpectation.fulfill()
-    }
-    
-    func onPopularMoviesError(_ response: FailedResponse) {
-        XCTAssert(false)
-        self.popularMoviesExpectation.fulfill()
-    }
-    
-    func onTopRatedMoviesSuccess(_ moviesResponse: MoviesResponse) {
-        XCTAssertNotNil(moviesResponse)
-        let movies = moviesResponse.movies
-        XCTAssertNotNil(movies)
-        XCTAssert(!movies!.isEmpty)
-        topRatedMoviesExpectation.fulfill()
-    }
-    
-    func onTopRatedMoviesError(_ response: FailedResponse) {
-        XCTAssert(false)
-        topRatedMoviesExpectation.fulfill()
-    }
-    
-    func onUpcomingMoviesSuccess(_ moviesResponse: MoviesResponse) {
-        XCTAssertNotNil(moviesResponse)
-        let movies = moviesResponse.movies
-        XCTAssertNotNil(movies)
-        XCTAssert(!movies!.isEmpty)
-        upcomingMoviesExpectation.fulfill()
-    }
-    
-    func onUpcomingMoviesError(_ response: FailedResponse) {
-        XCTAssert(false)
-        upcomingMoviesExpectation.fulfill()
     }
     
     private func savePopularMovies() {
@@ -151,5 +109,47 @@ extension HomeLocalDataManagerTests: HomeDataManagerOutputProtocol {
             demonic
         ]
         _ = self.sut.saveMovies(movies)
+    }
+}
+
+extension HomeLocalDataManagerTests: HomeLocalDataManagerOutputProtocol {
+    
+    func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse) {
+        XCTAssertNotNil(moviesResponse)
+        let movies = moviesResponse.movies
+        XCTAssertNotNil(movies)
+        XCTAssert(!movies!.isEmpty)
+        self.popularMoviesExpectation.fulfill()
+    }
+    
+    func onPopularMoviesError(_ response: FailedResponse) {
+        XCTAssert(false)
+        self.popularMoviesExpectation.fulfill()
+    }
+    
+    func onTopRatedMoviesSuccess(_ moviesResponse: MoviesResponse) {
+        XCTAssertNotNil(moviesResponse)
+        let movies = moviesResponse.movies
+        XCTAssertNotNil(movies)
+        XCTAssert(!movies!.isEmpty)
+        topRatedMoviesExpectation.fulfill()
+    }
+    
+    func onTopRatedMoviesError(_ response: FailedResponse) {
+        XCTAssert(false)
+        topRatedMoviesExpectation.fulfill()
+    }
+    
+    func onUpcomingMoviesSuccess(_ moviesResponse: MoviesResponse) {
+        XCTAssertNotNil(moviesResponse)
+        let movies = moviesResponse.movies
+        XCTAssertNotNil(movies)
+        XCTAssert(!movies!.isEmpty)
+        upcomingMoviesExpectation.fulfill()
+    }
+    
+    func onUpcomingMoviesError(_ response: FailedResponse) {
+        XCTAssert(false)
+        upcomingMoviesExpectation.fulfill()
     }
 }

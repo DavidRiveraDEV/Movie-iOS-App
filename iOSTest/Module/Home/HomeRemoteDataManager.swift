@@ -8,9 +8,40 @@
 
 import Foundation
 
-class HomeRemoteDataManager: HomeDataManager {
+class HomeRemoteDataManager {
+    
+    var dataManagerRequestHandler: HomeRemoteDataManagerOutputProtocol?
+    
+    let remoteMovieService: RemoteMovieService
     
     init() {
-        super.init(movieService: RemoteMovieService())
+        self.remoteMovieService = RemoteMovieService()
+    }
+}
+
+extension HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
+    
+    func getPopularMovies() {
+        self.remoteMovieService.getPopularMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onPopularMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onPopularMoviesError(response)
+        }
+    }
+    
+    func getTopRatedMovies() {
+        self.remoteMovieService.getTopRatedMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onTopRatedMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onTopRatedMoviesError(response)
+        }
+    }
+    
+    func getUpcomingMovies() {
+        self.remoteMovieService.getUpcomingMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onUpcomingMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onUpcomingMoviesError(response)
+        }
     }
 }

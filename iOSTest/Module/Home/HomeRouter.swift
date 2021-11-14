@@ -17,9 +17,9 @@ class HomeRouter: HomeRouterProtocol {
         
         if let view = navController.children.first as? HomeView {
             let presenter: HomePresenterProtocol & HomeInteractorOutputProtocol = HomePresenter()
-            let interactor: HomeInteractorInputProtocol & HomeDataManagerOutputProtocol = HomeInteractor()
-            let localDataManager: HomeDataManagerInputProtocol = HomeLocalDataManager()
-            let remoteDataManager: HomeDataManagerInputProtocol = HomeRemoteDataManager()
+            let interactor: HomeInteractorInputProtocol & HomeLocalDataManagerOutputProtocol & HomeRemoteDataManagerOutputProtocol = HomeInteractor()
+            let localDataManager: HomeLocalDataManagerInputProtocol = HomeLocalDataManager()
+            let remoteDataManager: HomeRemoteDataManagerInputProtocol = HomeRemoteDataManager()
             let router: HomeRouterProtocol = HomeRouter()
             
             view.presenter = presenter
@@ -29,6 +29,7 @@ class HomeRouter: HomeRouterProtocol {
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
+            localDataManager.dataManagerRequestHandler = interactor
             remoteDataManager.dataManagerRequestHandler = interactor
             
             return navController

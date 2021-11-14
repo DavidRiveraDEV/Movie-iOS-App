@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class LocalMovieService: MovieService, LocalMovieServiceProtocol {
+class LocalMovieService {
     
     let realm: Realm?
     

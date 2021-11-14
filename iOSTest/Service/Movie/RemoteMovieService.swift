@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteMovieService: MovieService {
+class RemoteMovieService {
     
     private var httpClient: HTTPClientProtocol
     
