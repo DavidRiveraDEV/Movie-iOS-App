@@ -21,4 +21,15 @@ class HomeView: UIViewController {
 
 extension HomeView: HomeViewProtocol {
     
+    func updatePopularMovies(_ movies: [Movie]) {
+        print("MOVIESTEST", "popular", movies)
+    }
+    
+    func updateTopRatedMovies(_ movies: [Movie]) {
+        print("MOVIESTEST", "topRated", movies)
+    }
+    
+    func updateUpcomingMovies(_ movies: [Movie]) {
+        print("MOVIESTEST", "upcoming", movies)
+    }
 }

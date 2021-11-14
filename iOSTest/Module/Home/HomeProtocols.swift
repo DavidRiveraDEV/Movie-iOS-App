@@ -12,10 +12,15 @@ import UIKit
 protocol HomeViewProtocol: AnyObject {
     
     var presenter: HomePresenterProtocol? { get set }
+    
+    func updatePopularMovies(_ movies: [Movie])
+    func updateTopRatedMovies(_ movies: [Movie])
+    func updateUpcomingMovies(_ movies: [Movie])
 }
 
 protocol HomeRouterProtocol: AnyObject {
 
+    func openMovieDetailView(from view: HomeViewProtocol, withMovieId id: Int)
 }
 
 protocol HomePresenterProtocol: AnyObject {
@@ -25,6 +30,7 @@ protocol HomePresenterProtocol: AnyObject {
     var router: HomeRouterProtocol? { get set }
     
     func viewDidLoad()
+    func movieDidSelected(id: Int)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {

@@ -66,6 +66,8 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
         if self.loadingPopularMoviesRemotely {
             self.loadingPopularMoviesRemotely = false
             self.localDatamanager?.getPopularMovies()
+        } else {
+            self.presenter?.updatePopularMovies([])
         }
     }
     
@@ -76,13 +78,15 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
         }
         self.saveMovies(finalMovies, withCategory: .topRated)
         self.loadingTopRatedMoviesRemotely = false
-        self.presenter?.updatePopularMovies(finalMovies)
+        self.presenter?.updateTopRatedMovies(finalMovies)
     }
     
     func onTopRatedMoviesError(_ response: FailedResponse) {
         if self.loadingTopRatedMoviesRemotely {
             self.loadingTopRatedMoviesRemotely = false
             self.localDatamanager?.getTopRatedMovies()
+        } else {
+            self.presenter?.updateTopRatedMovies([])
         }
     }
     
@@ -93,13 +97,15 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
         }
         self.saveMovies(finalMovies, withCategory: .upcoming)
         self.loadingUpcomingMoviesRemotely = false
-        self.presenter?.updatePopularMovies(finalMovies)
+        self.presenter?.updateUpcomingMovies(finalMovies)
     }
     
     func onUpcomingMoviesError(_ response: FailedResponse) {
         if self.loadingUpcomingMoviesRemotely {
             self.loadingUpcomingMoviesRemotely = false
             self.localDatamanager?.getUpcomingMovies()
+        } else {
+            self.presenter?.updateUpcomingMovies([])
         }
     }
 }
