@@ -18,18 +18,35 @@ class HomeInteractor: HomeInteractorInputProtocol {
 extension HomeInteractor: HomeDataManagerOutputProtocol {
     
     func onPopularMoviesSuccess(_ moviesResponse: MoviesResponse) {
+        let movies: [Movie]? = moviesResponse.movies?.map({ movie in
+            movie.category = Category.popular.rawValue
+            return movie
+        })
+        print(movies)
     }
     
     func onPopularMoviesError(_ response: FailedResponse) {
     }
     
     func onTopRatedMoviesSuccess(_ moviesResponse: MoviesResponse) {
+        let movies: [Movie]? = moviesResponse.movies?.map({ movie in
+            movie.category = Category.topRated.rawValue
+            return movie
+        })
+        print(movies)
+
     }
     
     func onTopRatedMoviesError(_ response: FailedResponse) {
     }
     
     func onUpcomingMoviesSuccess(_ moviesResponse: MoviesResponse) {
+        let movies: [Movie]? = moviesResponse.movies?.map({ movie in
+            movie.category = Category.upcoming.rawValue
+            return movie
+        })
+        print(movies)
+
     }
     
     func onUpcomingMoviesError(_ response: FailedResponse) {

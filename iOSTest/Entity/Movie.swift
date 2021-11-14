@@ -6,26 +6,34 @@
 //
 
 import Foundation
+import SwiftUI
+import RealmSwift
 
-struct Movie: Codable {
+class Movie: Object, Codable {
     
-    var id: Int?
-    var title: String?
-    var overview: String?
-    var status: String?
-    var releaseDate: String?
-    var popularity: Float?
-    var posterPath: String?
-    var backdropPath: String?
+    @objc dynamic var id: Int = 0
+    @objc dynamic var title: String?
+    @objc dynamic var overview: String?
+    @objc dynamic var releaseDate: String?
+    @objc dynamic var popularity: Float = 0
+    @objc dynamic var posterPath: String?
+    @objc dynamic var backdropPath: String?
+    @objc dynamic var category: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case overview
-        case status
         case releaseDate = "release_date"
         case popularity
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
+        case category
     }
+}
+
+enum Category: String, Codable {
+    case popular
+    case topRated
+    case upcoming
 }

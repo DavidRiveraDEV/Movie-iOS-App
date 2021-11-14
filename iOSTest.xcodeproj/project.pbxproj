@@ -50,6 +50,8 @@
 		CD9F5E2C273F7F74009AB887 /* LocalMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E2B273F7F74009AB887 /* LocalMovieService.swift */; };
 		CD9F5E2E273F8107009AB887 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E2D273F8107009AB887 /* MovieService.swift */; };
 		CD9F5E30273F8169009AB887 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E2F273F8169009AB887 /* HomeDataManager.swift */; };
+		CD9F5E3527402FCE009AB887 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD9F5E3427402FCE009AB887 /* RealmSwift */; };
+		CD9F5E3727416E79009AB887 /* Results+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E3627416E79009AB887 /* Results+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,7 @@
 		CD9F5E2B273F7F74009AB887 /* LocalMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMovieService.swift; sourceTree = "<group>"; };
 		CD9F5E2D273F8107009AB887 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		CD9F5E2F273F8169009AB887 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		CD9F5E3627416E79009AB887 /* Results+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F5E3527402FCE009AB887 /* RealmSwift in Frameworks */,
 				CD9F5DCF273EFB1C009AB887 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +282,7 @@
 				CD9F5DFA273F2EA8009AB887 /* Array+Extensions.swift */,
 				CD9F5DFB273F2EA8009AB887 /* Data+Extensions.swift */,
 				CD9F5DF9273F2EA8009AB887 /* String+Extensions.swift */,
+				CD9F5E3627416E79009AB887 /* Results+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 			name = iOSTest;
 			packageProductDependencies = (
 				CD9F5DCE273EFB1C009AB887 /* Alamofire */,
+				CD9F5E3427402FCE009AB887 /* RealmSwift */,
 			);
 			productName = iOSTest;
 			productReference = CD9F5D90273EF931009AB887 /* iOSTest.app */;
@@ -425,6 +431,7 @@
 			mainGroup = CD9F5D87273EF931009AB887;
 			packageReferences = (
 				CD9F5DCD273EFB1C009AB887 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CD9F5E3327402FCE009AB887 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = CD9F5D91273EF931009AB887 /* Products */;
 			projectDirPath = "";
@@ -491,6 +498,7 @@
 				CD9F5E17273F5896009AB887 /* HomeLocalDataManager.swift in Sources */,
 				CD9F5E25273F5FC0009AB887 /* RemoteMovieService.swift in Sources */,
 				CD9F5E2C273F7F74009AB887 /* LocalMovieService.swift in Sources */,
+				CD9F5E3727416E79009AB887 /* Results+Extensions.swift in Sources */,
 				CD9F5E2E273F8107009AB887 /* MovieService.swift in Sources */,
 				CD9F5E1C273F5896009AB887 /* HomeRemoteDataManager.swift in Sources */,
 				CD9F5D94273EF931009AB887 /* AppDelegate.swift in Sources */,
@@ -872,6 +880,14 @@
 				kind = branch;
 			};
 		};
+		CD9F5E3327402FCE009AB887 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -879,6 +895,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD9F5DCD273EFB1C009AB887 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CD9F5E3427402FCE009AB887 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9F5E3327402FCE009AB887 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

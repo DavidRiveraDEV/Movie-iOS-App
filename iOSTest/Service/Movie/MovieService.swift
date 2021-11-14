@@ -14,3 +14,13 @@ protocol MovieService {
     func getTopRatedMovies(onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void)
     func getUpcomingMovies(onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void)
 }
+
+protocol LocalMovieServiceProtocol {
+    
+    func saveMovies(_ movies: [Movie]) -> Bool
+    
+    func clearPopularMovies()
+    func clearTopRatedMovies()
+    func clearUpcomingMovies()
+    
+}

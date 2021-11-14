@@ -59,9 +59,6 @@ extension HomeRemoteDataManagerTests: HomeDataManagerOutputProtocol {
         let movies = moviesResponse.movies
         XCTAssertNotNil(movies)
         XCTAssert(!movies!.isEmpty)
-        let movie = movies?[0]
-        XCTAssertNotNil(movie)
-        XCTAssertNotEqual(movie!.id, 0)
         self.popularMoviesExpectation.fulfill()
     }
     
@@ -75,9 +72,6 @@ extension HomeRemoteDataManagerTests: HomeDataManagerOutputProtocol {
         let movies = moviesResponse.movies
         XCTAssertNotNil(movies)
         XCTAssert(!movies!.isEmpty)
-        let movie = movies?[0]
-        XCTAssertNotNil(movie)
-        XCTAssertNotEqual(movie!.id, 0)
         topRatedMoviesExpectation.fulfill()
     }
     
@@ -91,9 +85,6 @@ extension HomeRemoteDataManagerTests: HomeDataManagerOutputProtocol {
         let movies = moviesResponse.movies
         XCTAssertNotNil(movies)
         XCTAssert(!movies!.isEmpty)
-        let movie = movies?[0]
-        XCTAssertNotNil(movie)
-        XCTAssertNotEqual(movie!.id, 0)
         upcomingMoviesExpectation.fulfill()
     }
     
