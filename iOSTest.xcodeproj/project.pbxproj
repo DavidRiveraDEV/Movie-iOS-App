@@ -57,6 +57,15 @@
 		CD9F5E482741EC4A009AB887 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E472741EC4A009AB887 /* UIImage+Extensions.swift */; };
 		CD9F5E4A2741F37C009AB887 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E492741F37C009AB887 /* UIView+Extensions.swift */; };
 		CD9F5E4C2742030C009AB887 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E4B2742030C009AB887 /* ImageCacheService.swift */; };
+		CDE7C80B2742D0D900FC62BA /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C8042742D0D900FC62BA /* DetailPresenter.swift */; };
+		CDE7C80C2742D0D900FC62BA /* DetailLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C8052742D0D900FC62BA /* DetailLocalDataManager.swift */; };
+		CDE7C80D2742D0D900FC62BA /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C8062742D0D900FC62BA /* DetailRouter.swift */; };
+		CDE7C80E2742D0D900FC62BA /* DetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C8072742D0D900FC62BA /* DetailProtocols.swift */; };
+		CDE7C80F2742D0D900FC62BA /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C8082742D0D900FC62BA /* DetailInteractor.swift */; };
+		CDE7C8102742D0D900FC62BA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C8092742D0D900FC62BA /* DetailView.swift */; };
+		CDE7C8112742D0D900FC62BA /* DetailRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C80A2742D0D900FC62BA /* DetailRemoteDataManager.swift */; };
+		CDE7C813274309C200FC62BA /* DetailRemoteDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C812274309C200FC62BA /* DetailRemoteDataManagerTests.swift */; };
+		CDE7C81527430B3900FC62BA /* DetailLocalDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7C81427430B3900FC62BA /* DetailLocalDataManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +139,15 @@
 		CD9F5E472741EC4A009AB887 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5E492741F37C009AB887 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5E4B2742030C009AB887 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		CDE7C8042742D0D900FC62BA /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		CDE7C8052742D0D900FC62BA /* DetailLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLocalDataManager.swift; sourceTree = "<group>"; };
+		CDE7C8062742D0D900FC62BA /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		CDE7C8072742D0D900FC62BA /* DetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocols.swift; sourceTree = "<group>"; };
+		CDE7C8082742D0D900FC62BA /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		CDE7C8092742D0D900FC62BA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CDE7C80A2742D0D900FC62BA /* DetailRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRemoteDataManager.swift; sourceTree = "<group>"; };
+		CDE7C812274309C200FC62BA /* DetailRemoteDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRemoteDataManagerTests.swift; sourceTree = "<group>"; };
+		CDE7C81427430B3900FC62BA /* DetailLocalDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLocalDataManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +225,8 @@
 				CD9F5DD4273F2B82009AB887 /* HTTPClientTests.swift */,
 				CD9F5E08273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift */,
 				CD9F5E29273F7B2B009AB887 /* HomeLocalDataManagerTests.swift */,
+				CDE7C812274309C200FC62BA /* DetailRemoteDataManagerTests.swift */,
+				CDE7C81427430B3900FC62BA /* DetailLocalDataManagerTests.swift */,
 			);
 			path = iOSTestTests;
 			sourceTree = "<group>";
@@ -324,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				CD9F5E0E273F585D009AB887 /* Home */,
+				CDE7C7F52742D06400FC62BA /* Detail */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -359,6 +380,20 @@
 			children = (
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		CDE7C7F52742D06400FC62BA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CDE7C8072742D0D900FC62BA /* DetailProtocols.swift */,
+				CDE7C8092742D0D900FC62BA /* DetailView.swift */,
+				CDE7C8042742D0D900FC62BA /* DetailPresenter.swift */,
+				CDE7C8082742D0D900FC62BA /* DetailInteractor.swift */,
+				CDE7C8062742D0D900FC62BA /* DetailRouter.swift */,
+				CDE7C8052742D0D900FC62BA /* DetailLocalDataManager.swift */,
+				CDE7C80A2742D0D900FC62BA /* DetailRemoteDataManager.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,13 +541,18 @@
 				CD9F5E4C2742030C009AB887 /* ImageCacheService.swift in Sources */,
 				CD9F5DE6273F2E55009AB887 /* HTTPClientProtocol.swift in Sources */,
 				CD9F5E1B273F5896009AB887 /* HomeView.swift in Sources */,
+				CDE7C8112742D0D900FC62BA /* DetailRemoteDataManager.swift in Sources */,
 				CD9F5DEE273F2E6C009AB887 /* SuccessfulResponse.swift in Sources */,
 				CD9F5E16273F5896009AB887 /* HomePresenter.swift in Sources */,
+				CDE7C8102742D0D900FC62BA /* DetailView.swift in Sources */,
 				CD9F5DEF273F2E6C009AB887 /* StatusCode.swift in Sources */,
 				CD9F5E07273F3E02009AB887 /* RemoteDataManagerSettings.swift in Sources */,
+				CDE7C80D2742D0D900FC62BA /* DetailRouter.swift in Sources */,
 				CD9F5DED273F2E6C009AB887 /* FailedResponse.swift in Sources */,
 				CD9F5E4A2741F37C009AB887 /* UIView+Extensions.swift in Sources */,
+				CDE7C80E2742D0D900FC62BA /* DetailProtocols.swift in Sources */,
 				CD9F5E1A273F5896009AB887 /* HomeInteractor.swift in Sources */,
+				CDE7C80C2742D0D900FC62BA /* DetailLocalDataManager.swift in Sources */,
 				CD9F5E19273F5896009AB887 /* HomeProtocols.swift in Sources */,
 				CD9F5DFC273F2EA8009AB887 /* String+Extensions.swift in Sources */,
 				CD9F5D98273EF931009AB887 /* ViewController.swift in Sources */,
@@ -521,11 +561,13 @@
 				CD9F5DE7273F2E55009AB887 /* HTTPClientUtil.swift in Sources */,
 				CD9F5E412741D12F009AB887 /* LocalizabeViews+Extensions.swift in Sources */,
 				CD9F5E482741EC4A009AB887 /* UIImage+Extensions.swift in Sources */,
+				CDE7C80F2742D0D900FC62BA /* DetailInteractor.swift in Sources */,
 				CD9F5DFE273F2EA8009AB887 /* Data+Extensions.swift in Sources */,
 				CD9F5DF8273F2E8B009AB887 /* AlamofireHTTPService.swift in Sources */,
 				CD9F5DE8273F2E55009AB887 /* HTTPClient.swift in Sources */,
 				CD9F5E18273F5896009AB887 /* HomeRouter.swift in Sources */,
 				CD9F5E17273F5896009AB887 /* HomeLocalDataManager.swift in Sources */,
+				CDE7C80B2742D0D900FC62BA /* DetailPresenter.swift in Sources */,
 				CD9F5E25273F5FC0009AB887 /* RemoteMovieService.swift in Sources */,
 				CD9F5E2C273F7F74009AB887 /* LocalMovieService.swift in Sources */,
 				CD9F5E3727416E79009AB887 /* Results+Extensions.swift in Sources */,
@@ -548,8 +590,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE7C813274309C200FC62BA /* DetailRemoteDataManagerTests.swift in Sources */,
 				CD9F5E09273F3F0E009AB887 /* HomeRemoteDataManagerTests.swift in Sources */,
 				CD9F5E2A273F7B2B009AB887 /* HomeLocalDataManagerTests.swift in Sources */,
+				CDE7C81527430B3900FC62BA /* DetailLocalDataManagerTests.swift in Sources */,
 				CD9F5DD5273F2B82009AB887 /* HTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,6 +781,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -748,7 +793,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -764,6 +809,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -775,7 +821,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

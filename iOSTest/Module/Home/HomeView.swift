@@ -34,6 +34,8 @@ class HomeView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
+        
         self.setupViews()
         
         self.presenter?.viewDidLoad()
@@ -58,7 +60,9 @@ class HomeView: UIViewController {
         self.upcomingCollectionView.register(UINib(nibName: "MovieViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieViewCell")
         
         self.searchView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showKeyboard)))
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         
         self.searchTextField.delegate = self
         self.searchTextField.addTarget(self, action: #selector(self.searchDidChange), for: .editingChanged)

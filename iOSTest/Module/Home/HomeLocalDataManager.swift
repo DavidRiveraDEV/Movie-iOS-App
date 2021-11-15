@@ -31,7 +31,6 @@ extension HomeLocalDataManager: HomeLocalDataManagerInputProtocol {
         } onFailed: { [weak self] response in
             self?.dataManagerRequestHandler?.onPopularMoviesError(response)
         }
-
     }
     
     func getTopRatedMovies() {

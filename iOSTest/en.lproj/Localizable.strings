@@ -12,3 +12,5 @@
 "HomeView.Label.popular" = "Popular";
 "HomeView.Label.topRated" = "Top Rated";
 "HomeView.Label.upcoming" = "Upcoming";
+
+"DetailView.Label.overview" = "Overview";

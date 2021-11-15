@@ -33,7 +33,12 @@ class MovieViewCell: UICollectionViewCell {
             }
         }
         self.titleLabel.text = self.movie?.title
-        self.releaseDateLabel.text = self.movie?.releaseDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: self.movie?.releaseDate ?? "") {
+            dateFormatter.dateFormat = "yyyy"
+            self.releaseDateLabel.text = dateFormatter.string(from: date)
+        }
         self.ratingLabel.text = String(format: "%.1f", self.movie?.rating ?? 0)
     }
     

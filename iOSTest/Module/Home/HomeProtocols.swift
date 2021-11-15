@@ -20,7 +20,7 @@ protocol HomeViewProtocol: AnyObject {
 
 protocol HomeRouterProtocol: AnyObject {
 
-    func openMovieDetailView(from view: HomeViewProtocol, withMovieId id: Int)
+    func openMovieDetailView(from view: HomeViewProtocol, withMovieId id: Int, andCategory category: Category)
 }
 
 protocol HomePresenterProtocol: AnyObject {

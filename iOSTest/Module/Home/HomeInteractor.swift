@@ -45,16 +45,8 @@ class HomeInteractor: HomeInteractorInputProtocol {
         self.localDatamanager?.getUpcomingMoviesFiltered(value: value)
     }
     
-    private func saveMovies(_ movies: [Movie], withCategory category: Category) {
-        switch category {
-        case .popular:
-            self.localDatamanager?.clearPopularMovies()
-        case .topRated:
-            self.localDatamanager?.clearTopRatedMovies()
-        case .upcoming:
-            self.localDatamanager?.clearUpcomingMovies()
-        }
-        let moviesToSave: [Movie] = movies.map({ movie in
+    private func setCategory(_ category: Category, to movies: [Movie]) -> [Movie]{
+        return movies.map({ movie in
             let movieToSave = Movie()
             movieToSave.id = movie.id
             movieToSave.title = movie.title
@@ -66,7 +58,6 @@ class HomeInteractor: HomeInteractorInputProtocol {
             movieToSave.category = category.rawValue
             return movieToSave
         })
-        _ = self.localDatamanager?.saveMovies(moviesToSave)
     }
 }
 
@@ -78,7 +69,9 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
             finalMovies = movies
         }
         if self.loadingPopularMoviesRemotely {
-            self.saveMovies(finalMovies, withCategory: .popular)
+            finalMovies = self.setCategory(.popular, to: finalMovies)
+            self.localDatamanager?.clearPopularMovies()
+            _ = self.localDatamanager?.saveMovies(finalMovies)
             self.loadingPopularMoviesRemotely = false
         }
         self.presenter?.updatePopularMovies(finalMovies)
@@ -99,7 +92,9 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
             finalMovies = movies
         }
         if self.loadingTopRatedMoviesRemotely {
-            self.saveMovies(finalMovies, withCategory: .topRated)
+            finalMovies = self.setCategory(.topRated, to: finalMovies)
+            self.localDatamanager?.clearTopRatedMovies()
+            _ = self.localDatamanager?.saveMovies(finalMovies)
             self.loadingTopRatedMoviesRemotely = false
         }
         self.presenter?.updateTopRatedMovies(finalMovies)
@@ -120,7 +115,9 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
             finalMovies = movies
         }
         if self.loadingUpcomingMoviesRemotely {
-            self.saveMovies(finalMovies, withCategory: .upcoming)
+            finalMovies = self.setCategory(.upcoming, to: finalMovies)
+            self.localDatamanager?.clearUpcomingMovies()
+            _ = self.localDatamanager?.saveMovies(finalMovies)
             self.loadingUpcomingMoviesRemotely = false
         }
         self.presenter?.updateUpcomingMovies(finalMovies)

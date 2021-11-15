@@ -19,8 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let homeViewController = HomeRouter.createModule()
-        let navigation = UINavigationController(rootViewController: homeViewController)
+        var viewController: UIViewController!
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            viewController = UIViewController()
+        } else {
+            viewController = HomeRouter.createModule()
+        }
+        let navigation = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigation
         self.window = window
         window.makeKeyAndVisible()

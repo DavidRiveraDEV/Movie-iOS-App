@@ -16,6 +16,18 @@ class LocalMovieService {
         self.realm = try? Realm()
     }
     
+    func saveMovie(_ movie: Movie) -> Bool {
+        do {
+            self.clearMovie(id: movie.id)
+            try self.realm?.write() {
+                self.realm?.add(movie)
+            }
+            return true
+        } catch {
+            return false
+        }
+    }
+    
     func saveMovies(_ movies: [Movie]) -> Bool {
         guard !movies.isEmpty else { return false }
         do {
@@ -29,7 +41,11 @@ class LocalMovieService {
     }
     
     func getMovie(id: Int, onSuccess: @escaping (_ movie: Movie) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void) {
-        
+        if let movie: Movie = self.realm?.objects(Movie.self).filter("id == %@", id).first {
+            onSuccess(movie)
+        } else {
+            onFailed(FailedResponse(statusCode: .internalServerError, description: "Realm error", details: nil))
+        }
     }
     
     func getPopularMovies(onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void) {
@@ -39,7 +55,6 @@ class LocalMovieService {
         } else {
             onFailed(FailedResponse(statusCode: .internalServerError, description: "Realm error", details: nil))
         }
-        
     }
     
     func getTopRatedMovies(onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void) {
@@ -85,6 +100,14 @@ class LocalMovieService {
             onSuccess(moviesResponse)
         } else {
             onFailed(FailedResponse(statusCode: .internalServerError, description: "Realm error", details: nil))
+        }
+    }
+    
+    func clearMovie(id: Int) {
+        if let realm = realm {
+            try? realm.write {
+                realm.delete(realm.objects(Movie.self).filter("id == %@", id))
+            }
         }
     }
     

@@ -12,7 +12,7 @@ import UIKit
 class HomeRouter: HomeRouterProtocol {
 
     class func createModule() -> UIViewController {
-        if let view = mainStoryboard.instantiateViewController(withIdentifier: "HomeView") as? HomeView {
+        if let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeView") as? HomeView {
             let presenter: HomePresenterProtocol & HomeInteractorOutputProtocol = HomePresenter()
             let interactor: HomeInteractorInputProtocol & HomeLocalDataManagerOutputProtocol & HomeRemoteDataManagerOutputProtocol = HomeInteractor()
             let localDataManager: HomeLocalDataManagerInputProtocol = HomeLocalDataManager()
@@ -34,14 +34,10 @@ class HomeRouter: HomeRouterProtocol {
         return UIViewController()
     }
     
-    func openMovieDetailView(from view: HomeViewProtocol, withMovieId id: Int) {
-//        if let movieDetailView = MovieDetailRouter.createModule(withMovieId: id)
-//        if let view = view as? UIViewController {
-//            view.navigationController?.pushViewController(movieDetailView, animated: true)
-//        }
-    }
-    
-    static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
+    func openMovieDetailView(from view: HomeViewProtocol, withMovieId id: Int, andCategory category: Category) {
+        let movieDetailView = DetailRouter.createModule(withMovieId: id, andCategory: category)
+        if let view = view as? UIViewController {
+            view.navigationController?.pushViewController(movieDetailView, animated: true)
+        }
     }
 }
