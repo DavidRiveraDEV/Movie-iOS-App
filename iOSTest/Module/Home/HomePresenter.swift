@@ -13,6 +13,8 @@ class HomePresenter {
     weak var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
     var router: HomeRouterProtocol?
+    
+    var lastSearchText: String = ""
 }
 
 extension HomePresenter: HomePresenterProtocol {
@@ -30,12 +32,15 @@ extension HomePresenter: HomePresenterProtocol {
     }
     
     func searchDidChange(text: String) {
-        if (text.isEmpty) {
-            self.viewDidLoad()
-        } else {
-            self.interactor?.getPopularMoviesFiltered(value: text)
-            self.interactor?.getTopRatedMoviesFiltered(value: text)
-            self.interactor?.getUpcomingMoviesFiltered(value: text)
+        if self.lastSearchText != text {
+            self.lastSearchText = text
+            if (text.isEmpty) {
+                self.viewDidLoad()
+            } else {
+                self.interactor?.getPopularMoviesFiltered(value: text)
+                self.interactor?.getTopRatedMoviesFiltered(value: text)
+                self.interactor?.getUpcomingMoviesFiltered(value: text)
+            }
         }
     }
 }

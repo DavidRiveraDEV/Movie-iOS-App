@@ -12,6 +12,12 @@ import UIKit
 class HomeView: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var titleContainerView: UIView!
+    @IBOutlet weak var searchContainerView: UIView!
+    @IBOutlet weak var popularContainerView: UIView!
+    @IBOutlet weak var topRatedContainerView: UIView!
+    @IBOutlet weak var upcomingContainerView: UIView!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var popularCollectionView: UICollectionView!
@@ -25,8 +31,6 @@ class HomeView: UIViewController {
     var topRatedMovies: [Movie] = []
     var upcomingMovies: [Movie] = []
     
-    var labelText: String? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +40,10 @@ class HomeView: UIViewController {
     }
     
     private func setupViews() {
-        self.labelText = self.titleLabel.text
+        
+        self.popularContainerView.isHidden = true
+        self.topRatedContainerView.isHidden = true
+        self.upcomingContainerView.isHidden = true
         
         self.popularCollectionView.delegate = self
         self.popularCollectionView.dataSource = self
@@ -62,26 +69,47 @@ class HomeView: UIViewController {
     private func setupScrollView() {
         _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (note) in
             guard let keyboardFrame = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-            self.animateScrollView(bottomInset: keyboardFrame.size.height)
-            self.animateTitleLabel(show: false)
+            self.setScrollViewObttomInset(keyboardFrame.size.height)
         }
         
         _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { (_) in
-            self.animateScrollView(bottomInset: 0)
-            self.animateTitleLabel(show: true)
+            self.setScrollViewObttomInset(0)
         }
     }
     
-    private func animateScrollView(bottomInset: CGFloat) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottomInset, right: 0.0)
-        }, completion: nil)
+    private func setScrollViewObttomInset(_ bottomInset: CGFloat) {
+        self.scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottomInset, right: 0.0)
     }
     
-    private func animateTitleLabel(show: Bool) {
-        self.titleLabel.text = show ? self.labelText : nil
+    private func showTitle(_ show: Bool) {
+        self.titleContainerView.isHidden = !show
         UIView.animate(withDuration: 0.3) {
-            self.titleLabel.superview?.layoutIfNeeded()
+            self.scrollView.layoutIfNeeded()
+            self.titleLabel.alpha = show ? 1 : 0
+        }
+    }
+    
+    private func showPopularContainer(_ show: Bool) {
+        self.popularContainerView.isHidden = !show
+        UIView.animate(withDuration: 0.3) {
+            self.scrollView.layoutIfNeeded()
+            self.popularCollectionView.alpha = show ? 1 : 0
+        }
+    }
+    
+    private func showTopRatedContainer(_ show: Bool) {
+        self.topRatedContainerView.isHidden = !show
+        UIView.animate(withDuration: 0.3) {
+            self.scrollView.layoutIfNeeded()
+            self.topRatedContainerView.alpha = show ? 1 : 0
+        }
+    }
+    
+    private func showUpcomingContainer(_ show: Bool) {
+        self.upcomingContainerView.isHidden = !show
+        UIView.animate(withDuration: 0.3) {
+            self.scrollView.layoutIfNeeded()
+            self.upcomingCollectionView.alpha = show ? 1 : 0
         }
     }
     
@@ -100,6 +128,7 @@ extension HomeView: HomeViewProtocol {
         self.popularMovies = movies
         DispatchQueue.main.async {
             self.popularCollectionView.reloadData()
+            self.showPopularContainer(!movies.isEmpty)
         }
     }
     
@@ -107,6 +136,7 @@ extension HomeView: HomeViewProtocol {
         self.topRatedMovies = movies
         DispatchQueue.main.async {
             self.topRatedCollectionView.reloadData()
+            self.showTopRatedContainer(!movies.isEmpty)
         }
     }
     
@@ -114,6 +144,7 @@ extension HomeView: HomeViewProtocol {
         self.upcomingMovies = movies
         DispatchQueue.main.async {
             self.upcomingCollectionView.reloadData()
+            self.showUpcomingContainer(!movies.isEmpty)
         }
     }
 }
@@ -187,5 +218,13 @@ extension HomeView: UITextFieldDelegate {
         if let text = self.searchTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             self.presenter?.searchDidChange(text: text)
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.showTitle(true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.showTitle(false)
     }
 }
