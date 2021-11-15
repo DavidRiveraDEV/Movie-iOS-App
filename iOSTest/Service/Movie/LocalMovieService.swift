@@ -71,7 +71,7 @@ class LocalMovieService {
     func clearTopRatedMovies() {
         if let realm = realm {
             try? realm.write {
-                realm.delete(realm.objects(Movie.self).filter("category == %@", Category.popular.rawValue))
+                realm.delete(realm.objects(Movie.self).filter("category == %@", Category.topRated.rawValue))
             }
         }
     }
@@ -79,7 +79,7 @@ class LocalMovieService {
     func clearUpcomingMovies() {
         if let realm = realm {
             try? realm.write {
-                realm.delete(realm.objects(Movie.self).filter("category == %@", Category.popular.rawValue))
+                realm.delete(realm.objects(Movie.self).filter("category == %@", Category.upcoming.rawValue))
             }
         }
     }

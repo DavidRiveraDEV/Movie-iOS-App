@@ -21,8 +21,16 @@ class MovieViewCell: UICollectionViewCell {
     }
     
     private func updateMovie() {
-        if let url = URL(string: RemoteDataManagerSettings.imageUrl + (self.movie?.posterPath ?? "")) {
-            self.posterImageView.load(url: url)
+        if let posterPath = self.movie?.posterPath {
+            if let cacheImage = ImageCacheService.getImage(forKey: posterPath) {
+                self.posterImageView.image = cacheImage
+            } else if let url = URL(string: RemoteDataManagerSettings.imageUrl + posterPath) {
+                self.posterImageView.load(url: url) { image in
+                    if let image = image {
+                        ImageCacheService.save(image: image, forKey: posterPath)
+                    }
+                }
+            }
         }
         self.titleLabel.text = self.movie?.title
         self.releaseDateLabel.text = self.movie?.releaseDate

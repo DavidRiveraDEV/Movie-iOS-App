@@ -56,6 +56,7 @@
 		CD9F5E462741D8A6009AB887 /* MovieViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9F5E452741D8A6009AB887 /* MovieViewCell.xib */; };
 		CD9F5E482741EC4A009AB887 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E472741EC4A009AB887 /* UIImage+Extensions.swift */; };
 		CD9F5E4A2741F37C009AB887 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E492741F37C009AB887 /* UIView+Extensions.swift */; };
+		CD9F5E4C2742030C009AB887 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F5E4B2742030C009AB887 /* ImageCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		CD9F5E452741D8A6009AB887 /* MovieViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieViewCell.xib; sourceTree = "<group>"; };
 		CD9F5E472741EC4A009AB887 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		CD9F5E492741F37C009AB887 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		CD9F5E4B2742030C009AB887 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 			children = (
 				CD9F5E2B273F7F74009AB887 /* LocalMovieService.swift */,
 				CD9F5E24273F5FC0009AB887 /* RemoteMovieService.swift */,
+				CD9F5E4B2742030C009AB887 /* ImageCacheService.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F5E4C2742030C009AB887 /* ImageCacheService.swift in Sources */,
 				CD9F5DE6273F2E55009AB887 /* HTTPClientProtocol.swift in Sources */,
 				CD9F5E1B273F5896009AB887 /* HomeView.swift in Sources */,
 				CD9F5DEE273F2E6C009AB887 /* SuccessfulResponse.swift in Sources */,

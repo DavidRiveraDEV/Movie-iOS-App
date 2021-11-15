@@ -65,8 +65,10 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
         if let movies = moviesResponse.movies {
             finalMovies = movies
         }
-        self.saveMovies(finalMovies, withCategory: .popular)
-        self.loadingPopularMoviesRemotely = false
+        if self.loadingPopularMoviesRemotely {
+            self.saveMovies(finalMovies, withCategory: .popular)
+            self.loadingPopularMoviesRemotely = false
+        }
         self.presenter?.updatePopularMovies(finalMovies)
     }
     
@@ -84,8 +86,10 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
         if let movies = moviesResponse.movies {
             finalMovies = movies
         }
-        self.saveMovies(finalMovies, withCategory: .topRated)
-        self.loadingTopRatedMoviesRemotely = false
+        if self.loadingTopRatedMoviesRemotely {
+            self.saveMovies(finalMovies, withCategory: .topRated)
+            self.loadingTopRatedMoviesRemotely = false
+        }
         self.presenter?.updateTopRatedMovies(finalMovies)
     }
     
@@ -103,8 +107,10 @@ extension HomeInteractor: HomeLocalDataManagerOutputProtocol, HomeRemoteDataMana
         if let movies = moviesResponse.movies {
             finalMovies = movies
         }
-        self.saveMovies(finalMovies, withCategory: .upcoming)
-        self.loadingUpcomingMoviesRemotely = false
+        if self.loadingUpcomingMoviesRemotely {
+            self.saveMovies(finalMovies, withCategory: .upcoming)
+            self.loadingUpcomingMoviesRemotely = false
+        }
         self.presenter?.updateUpcomingMovies(finalMovies)
     }
     
