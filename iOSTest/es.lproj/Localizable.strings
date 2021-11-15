@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  iOSTest
+
+  Created by David Rivera on 14/11/21.
+  
+*/
+
+
+"HomeView.Label.title" = "Mi increíble aplicación de películas";
+"HomeView.Label.searchPlaceholder" = "Buscar";
+"HomeView.Label.popular" = "Popular";
+"HomeView.Label.topRated" = "Mejor calificado";
+"HomeView.Label.upcoming" = "Próximo";

@@ -15,7 +15,7 @@ class Movie: Object, Codable {
     @objc dynamic var title: String?
     @objc dynamic var overview: String?
     @objc dynamic var releaseDate: String?
-    @objc dynamic var popularity: Float = 0
+    @objc dynamic var rating: Float = 0
     @objc dynamic var posterPath: String?
     @objc dynamic var backdropPath: String?
     @objc dynamic var category: String?
@@ -25,7 +25,7 @@ class Movie: Object, Codable {
         case title
         case overview
         case releaseDate = "release_date"
-        case popularity
+        case rating = "vote_average"
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
         case category

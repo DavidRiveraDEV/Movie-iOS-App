@@ -23,9 +23,9 @@ extension HomePresenter: HomePresenterProtocol {
         self.interactor?.getUpcomingMovies()
     }
     
-    func movieDidSelected(id: Int) {
+    func movieDidSelected(movie: Movie) {
         if let view = self.view {
-            self.router?.openMovieDetailView(from: view, withMovieId: id)
+            self.router?.openMovieDetailView(from: view, withMovieId: movie.id)
         }
     }
 }

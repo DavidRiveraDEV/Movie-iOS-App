@@ -21,19 +21,19 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5m-99-89L">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="787"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="967"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TU-wQ-1jm">
-                                                <rect key="frame" x="24" y="12" width="342" height="44"/>
+                                                <rect key="frame" x="24" y="12" width="320.5" height="44"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
-                                                <nil key="textColor"/>
-                                                <color key="highlightedColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.16078431372549018" green="0.1764705882352941" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.popular" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgK-7l-T7I">
                                                 <rect key="frame" x="24" y="160" width="366" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <color key="highlightedColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.58039215686274503" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66n-Id-u1n">
                                                 <rect key="frame" x="24" y="80" width="366" height="48"/>
@@ -69,21 +69,21 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Ea-Ey-LPh">
-                                                <rect key="frame" x="0.0" y="197" width="414" height="140"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Ea-Ey-LPh">
+                                                <rect key="frame" x="0.0" y="197" width="414" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="B6b-nh-W4M"/>
+                                                    <constraint firstAttribute="height" constant="200" id="B6b-nh-W4M"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W6P-pz-EDU">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W6P-pz-EDU">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FYG-fM-YFA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieViewCell" id="FYG-fM-YFA">
+                                                        <rect key="frame" x="0.0" y="36" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="F2Y-71-xk7">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -93,26 +93,26 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.topRated" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-ob-CmK">
-                                                <rect key="frame" x="24" y="369" width="366" height="25"/>
+                                                <rect key="frame" x="24" y="429" width="366" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <color key="highlightedColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.58039215690000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dzl-xk-FZx">
-                                                <rect key="frame" x="0.0" y="406" width="414" height="140"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dzl-xk-FZx">
+                                                <rect key="frame" x="0.0" y="466" width="414" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="fIg-c6-lH7"/>
+                                                    <constraint firstAttribute="height" constant="200" id="fIg-c6-lH7"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uhv-GX-5Ok">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uhv-GX-5Ok">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CIJ-1J-isp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieViewCell" id="CIJ-1J-isp">
+                                                        <rect key="frame" x="0.0" y="36" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Ms-1h-cTi">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -121,27 +121,27 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.topRated" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-yL-9y8">
-                                                <rect key="frame" x="24" y="578" width="366" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.upcoming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-yL-9y8">
+                                                <rect key="frame" x="24" y="698" width="366" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <color key="highlightedColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.58039215690000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ngB-fK-OUK">
-                                                <rect key="frame" x="0.0" y="615" width="414" height="140"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ngB-fK-OUK">
+                                                <rect key="frame" x="0.0" y="735" width="414" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="zgd-Yg-CTx"/>
+                                                    <constraint firstAttribute="height" constant="200" id="zgd-Yg-CTx"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rGp-7I-iQl">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rGp-7I-iQl">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Acx-cN-VWV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieViewCell" id="Acx-cN-VWV">
+                                                        <rect key="frame" x="0.0" y="36" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2pu-No-vG0">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -164,7 +164,7 @@
                                             <constraint firstItem="Eae-yL-9y8" firstAttribute="leading" secondItem="T5m-99-89L" secondAttribute="leading" constant="24" id="LV8-gU-Ytr"/>
                                             <constraint firstItem="pgK-7l-T7I" firstAttribute="leading" secondItem="T5m-99-89L" secondAttribute="leading" constant="24" id="N4H-R4-R8r"/>
                                             <constraint firstItem="66n-Id-u1n" firstAttribute="top" secondItem="9TU-wQ-1jm" secondAttribute="bottom" constant="24" id="P6Q-F4-KAI"/>
-                                            <constraint firstAttribute="trailing" secondItem="9TU-wQ-1jm" secondAttribute="trailing" constant="48" id="RAv-wp-Vgt"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9TU-wQ-1jm" secondAttribute="trailing" constant="32" id="RAv-wp-Vgt"/>
                                             <constraint firstAttribute="trailing" secondItem="66n-Id-u1n" secondAttribute="trailing" constant="24" id="TNe-B4-hJb"/>
                                             <constraint firstItem="8Ea-Ey-LPh" firstAttribute="top" secondItem="pgK-7l-T7I" secondAttribute="bottom" constant="12" id="W7Z-j3-Tme"/>
                                             <constraint firstItem="ngB-fK-OUK" firstAttribute="top" secondItem="Eae-yL-9y8" secondAttribute="bottom" constant="12" id="ZqS-Cn-Dza"/>
@@ -202,6 +202,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="paM-VH-ADv"/>
+                    <connections>
+                        <outlet property="popularCollectionView" destination="8Ea-Ey-LPh" id="Zia-nn-0Kp"/>
+                        <outlet property="searchView" destination="66n-Id-u1n" id="dt3-Bq-IHw"/>
+                        <outlet property="topRatedCollectionView" destination="dzl-xk-FZx" id="fPd-x5-rqa"/>
+                        <outlet property="upcomingCollectionView" destination="ngB-fK-OUK" id="J8n-N6-1LY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

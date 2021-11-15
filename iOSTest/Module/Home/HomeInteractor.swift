@@ -43,8 +43,16 @@ class HomeInteractor: HomeInteractorInputProtocol {
             self.localDatamanager?.clearUpcomingMovies()
         }
         let moviesToSave: [Movie] = movies.map({ movie in
-            movie.category = category.rawValue
-            return movie
+            let movieToSave = Movie()
+            movieToSave.id = movie.id
+            movieToSave.title = movie.title
+            movieToSave.overview = movie.overview
+            movieToSave.releaseDate = movie.releaseDate
+            movieToSave.rating = movie.rating
+            movieToSave.posterPath = movie.posterPath
+            movieToSave.backdropPath = movie.backdropPath
+            movieToSave.category = category.rawValue
+            return movieToSave
         })
         _ = self.localDatamanager?.saveMovies(moviesToSave)
     }

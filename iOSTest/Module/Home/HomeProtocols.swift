@@ -30,7 +30,7 @@ protocol HomePresenterProtocol: AnyObject {
     var router: HomeRouterProtocol? { get set }
     
     func viewDidLoad()
-    func movieDidSelected(id: Int)
+    func movieDidSelected(movie: Movie)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {

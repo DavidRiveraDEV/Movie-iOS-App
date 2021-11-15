@@ -14,4 +14,12 @@ extension String {
             return ""
         }
     }
+    
+    static func removeNil(_ value : String?) -> String {
+        return value ?? .empty
+    }
+    
+    func localize() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
 }
