@@ -28,6 +28,16 @@ extension HomePresenter: HomePresenterProtocol {
             self.router?.openMovieDetailView(from: view, withMovieId: movie.id)
         }
     }
+    
+    func searchDidChange(text: String) {
+        if (text.isEmpty) {
+            self.viewDidLoad()
+        } else {
+            self.interactor?.getPopularMoviesFiltered(value: text)
+            self.interactor?.getTopRatedMoviesFiltered(value: text)
+            self.interactor?.getUpcomingMoviesFiltered(value: text)
+        }
+    }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5m-99-89L">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="967"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="999"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TU-wQ-1jm">
                                                 <rect key="frame" x="24" y="12" width="320.5" height="44"/>
@@ -45,22 +45,22 @@
                                                             <constraint firstAttribute="width" secondItem="NY1-uo-o9l" secondAttribute="height" multiplier="1:1" id="Sv6-vi-2dW"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeView.Label.searchPlaceholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abz-ES-DPQ">
-                                                        <rect key="frame" x="40" y="8" width="314" height="32"/>
-                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                        <color key="textColor" red="0.44313725490196076" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="HomeView.Label.searchPlaceholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PsB-sw-DMe">
+                                                        <rect key="frame" x="40" y="0.0" width="314" height="48"/>
+                                                        <color key="textColor" red="0.16078431369999999" green="0.1764705882" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" textContentType="name"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.45882352941176469" green="0.74117647058823533" blue="0.85490196078431369" alpha="0.12308673469387756" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="PsB-sw-DMe" secondAttribute="bottom" id="4rT-ks-8iQ"/>
                                                     <constraint firstAttribute="bottom" secondItem="NY1-uo-o9l" secondAttribute="bottom" constant="14" id="8lG-Gj-4Tz"/>
+                                                    <constraint firstItem="PsB-sw-DMe" firstAttribute="leading" secondItem="NY1-uo-o9l" secondAttribute="trailing" constant="8" id="FRf-ki-YsV"/>
                                                     <constraint firstAttribute="height" constant="48" id="HjW-w6-BlV"/>
-                                                    <constraint firstItem="abz-ES-DPQ" firstAttribute="top" secondItem="66n-Id-u1n" secondAttribute="top" constant="8" id="Vti-bN-BJG"/>
                                                     <constraint firstItem="NY1-uo-o9l" firstAttribute="leading" secondItem="66n-Id-u1n" secondAttribute="leading" constant="12" id="cdq-1Y-H4R"/>
-                                                    <constraint firstAttribute="trailing" secondItem="abz-ES-DPQ" secondAttribute="trailing" constant="12" id="czh-ho-48d"/>
-                                                    <constraint firstItem="abz-ES-DPQ" firstAttribute="leading" secondItem="NY1-uo-o9l" secondAttribute="trailing" constant="8" id="kEC-61-cFc"/>
-                                                    <constraint firstAttribute="bottom" secondItem="abz-ES-DPQ" secondAttribute="bottom" constant="8" id="ouM-Wl-v6w"/>
+                                                    <constraint firstItem="PsB-sw-DMe" firstAttribute="top" secondItem="66n-Id-u1n" secondAttribute="top" id="i10-Sv-sAl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PsB-sw-DMe" secondAttribute="trailing" constant="12" id="oZ1-b8-1cY"/>
                                                     <constraint firstItem="NY1-uo-o9l" firstAttribute="top" secondItem="66n-Id-u1n" secondAttribute="top" constant="14" id="xTs-TB-0yw"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -177,7 +177,7 @@
                                             <constraint firstItem="9TU-wQ-1jm" firstAttribute="leading" secondItem="T5m-99-89L" secondAttribute="leading" constant="24" id="lyF-9L-VZu"/>
                                             <constraint firstAttribute="trailing" secondItem="pgK-7l-T7I" secondAttribute="trailing" constant="24" id="nql-hB-9FQ"/>
                                             <constraint firstItem="pgK-7l-T7I" firstAttribute="top" secondItem="66n-Id-u1n" secondAttribute="bottom" constant="32" id="yqG-Lr-k0h"/>
-                                            <constraint firstAttribute="bottom" secondItem="ngB-fK-OUK" secondAttribute="bottom" constant="32" id="z3Z-Sw-Xfa"/>
+                                            <constraint firstAttribute="bottom" secondItem="ngB-fK-OUK" secondAttribute="bottom" constant="64" id="z3Z-Sw-Xfa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -204,7 +204,10 @@
                     <navigationItem key="navigationItem" id="paM-VH-ADv"/>
                     <connections>
                         <outlet property="popularCollectionView" destination="8Ea-Ey-LPh" id="Zia-nn-0Kp"/>
+                        <outlet property="scrollView" destination="uKG-vx-g4v" id="cTH-zn-JfC"/>
+                        <outlet property="searchTextField" destination="PsB-sw-DMe" id="4mf-DP-lfC"/>
                         <outlet property="searchView" destination="66n-Id-u1n" id="dt3-Bq-IHw"/>
+                        <outlet property="titleLabel" destination="9TU-wQ-1jm" id="Lak-0F-1sH"/>
                         <outlet property="topRatedCollectionView" destination="dzl-xk-FZx" id="fPd-x5-rqa"/>
                         <outlet property="upcomingCollectionView" destination="ngB-fK-OUK" id="J8n-N6-1LY"/>
                     </connections>

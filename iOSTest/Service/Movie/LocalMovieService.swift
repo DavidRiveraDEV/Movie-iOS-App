@@ -60,6 +60,34 @@ class LocalMovieService {
         }
     }
     
+    func getPopularMoviesFiltered(value: String, onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void) {
+        if let movies: [Movie] = self.realm?.objects(Movie.self).filter("category == %@ AND title CONTAINS[c] %@", Category.popular.rawValue, value).compactMap({ $0 }) {
+            let moviesResponse = MoviesResponse(movies: movies)
+            onSuccess(moviesResponse)
+        } else {
+            onFailed(FailedResponse(statusCode: .internalServerError, description: "Realm error", details: nil))
+        }
+        
+    }
+    
+    func getTopRatedMoviesFiltered(value: String, onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void) {
+        if let movies: [Movie] = self.realm?.objects(Movie.self).filter("category == %@ AND title CONTAINS[c] %@", Category.topRated.rawValue, value).compactMap({ $0 }) {
+            let moviesResponse = MoviesResponse(movies: movies)
+            onSuccess(moviesResponse)
+        } else {
+            onFailed(FailedResponse(statusCode: .internalServerError, description: "Realm error", details: nil))
+        }
+    }
+    
+    func getUpcomingMoviesFiltered(value: String, onSuccess: @escaping (_ moviesResponse: MoviesResponse) -> Void, onFailed: @escaping (_ response: FailedResponse) -> Void) {
+        if let movies: [Movie] = self.realm?.objects(Movie.self).filter("category == %@ AND title CONTAINS[c] %@", Category.upcoming.rawValue, value).compactMap({ $0 }) {
+            let moviesResponse = MoviesResponse(movies: movies)
+            onSuccess(moviesResponse)
+        } else {
+            onFailed(FailedResponse(statusCode: .internalServerError, description: "Realm error", details: nil))
+        }
+    }
+    
     func clearPopularMovies() {
         if let realm = realm {
             try? realm.write {

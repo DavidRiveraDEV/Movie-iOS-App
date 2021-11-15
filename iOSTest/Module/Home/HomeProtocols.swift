@@ -31,6 +31,7 @@ protocol HomePresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func movieDidSelected(movie: Movie)
+    func searchDidChange(text: String)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {
@@ -49,6 +50,9 @@ protocol HomeInteractorInputProtocol: AnyObject {
     func getPopularMovies()
     func getTopRatedMovies()
     func getUpcomingMovies()
+    func getPopularMoviesFiltered(value: String)
+    func getTopRatedMoviesFiltered(value: String)
+    func getUpcomingMoviesFiltered(value: String)
 }
 
 protocol HomeDataManagerInputProtocol: AnyObject {
@@ -85,6 +89,9 @@ protocol HomeLocalDataManagerInputProtocol: HomeDataManagerInputProtocol {
     func clearPopularMovies()
     func clearTopRatedMovies()
     func clearUpcomingMovies()
+    func getPopularMoviesFiltered(value: String)
+    func getTopRatedMoviesFiltered(value: String)
+    func getUpcomingMoviesFiltered(value: String)
 }
 
 protocol HomeLocalDataManagerOutputProtocol: HomeDataManagerOutputProtocol {

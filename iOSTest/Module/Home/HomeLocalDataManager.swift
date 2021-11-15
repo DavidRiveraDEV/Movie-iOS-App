@@ -19,7 +19,7 @@ class HomeLocalDataManager {
     }
 }
 
-extension HomeLocalDataManager: HomeLocalDataManagerInputProtocol {
+extension HomeLocalDataManager: HomeLocalDataManagerInputProtocol {    
     
     func saveMovies(_ movies: [Movie]) -> Bool {
         return self.localMovieService.saveMovies(movies)
@@ -44,6 +44,31 @@ extension HomeLocalDataManager: HomeLocalDataManagerInputProtocol {
     
     func getUpcomingMovies() {
         self.localMovieService.getUpcomingMovies { [weak self] movies in
+            self?.dataManagerRequestHandler?.onUpcomingMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onUpcomingMoviesError(response)
+        }
+    }
+    
+    func getPopularMoviesFiltered(value: String) {
+        self.localMovieService.getPopularMoviesFiltered(value: value) { [weak self] movies in
+            self?.dataManagerRequestHandler?.onPopularMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onPopularMoviesError(response)
+        }
+
+    }
+    
+    func getTopRatedMoviesFiltered(value: String) {
+        self.localMovieService.getTopRatedMoviesFiltered(value: value) { [weak self] movies in
+            self?.dataManagerRequestHandler?.onTopRatedMoviesSuccess(movies)
+        } onFailed: { [weak self] response in
+            self?.dataManagerRequestHandler?.onTopRatedMoviesError(response)
+        }
+    }
+    
+    func getUpcomingMoviesFiltered(value: String) {
+        self.localMovieService.getUpcomingMoviesFiltered(value: value) { [weak self] movies in
             self?.dataManagerRequestHandler?.onUpcomingMoviesSuccess(movies)
         } onFailed: { [weak self] response in
             self?.dataManagerRequestHandler?.onUpcomingMoviesError(response)

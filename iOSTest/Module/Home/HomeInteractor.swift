@@ -33,6 +33,18 @@ class HomeInteractor: HomeInteractorInputProtocol {
         self.remoteDatamanager?.getUpcomingMovies()
     }
     
+    func getPopularMoviesFiltered(value: String) {
+        self.localDatamanager?.getPopularMoviesFiltered(value: value)
+    }
+    
+    func getTopRatedMoviesFiltered(value: String) {
+        self.localDatamanager?.getTopRatedMoviesFiltered(value: value)
+    }
+    
+    func getUpcomingMoviesFiltered(value: String) {
+        self.localDatamanager?.getUpcomingMoviesFiltered(value: value)
+    }
+    
     private func saveMovies(_ movies: [Movie], withCategory category: Category) {
         switch category {
         case .popular:

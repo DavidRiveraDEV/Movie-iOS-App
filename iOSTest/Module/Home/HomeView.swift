@@ -11,16 +11,21 @@ import UIKit
 
 class HomeView: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var presenter: HomePresenterProtocol?
     
     var popularMovies: [Movie] = []
     var topRatedMovies: [Movie] = []
     var upcomingMovies: [Movie] = []
+    
+    var labelText: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,8 @@ class HomeView: UIViewController {
     }
     
     private func setupViews() {
+        self.labelText = self.titleLabel.text
+        
         self.popularCollectionView.delegate = self
         self.popularCollectionView.dataSource = self
         self.popularCollectionView.register(UINib(nibName: "MovieViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieViewCell")
@@ -42,6 +49,48 @@ class HomeView: UIViewController {
         self.upcomingCollectionView.delegate = self
         self.upcomingCollectionView.dataSource = self
         self.upcomingCollectionView.register(UINib(nibName: "MovieViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieViewCell")
+        
+        self.searchView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showKeyboard)))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
+        
+        self.searchTextField.delegate = self
+        self.searchTextField.addTarget(self, action: #selector(self.searchDidChange), for: .editingChanged)
+
+        self.setupScrollView()
+    }
+    
+    private func setupScrollView() {
+        _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (note) in
+            guard let keyboardFrame = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+            self.animateScrollView(bottomInset: keyboardFrame.size.height)
+            self.animateTitleLabel(show: false)
+        }
+        
+        _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { (_) in
+            self.animateScrollView(bottomInset: 0)
+            self.animateTitleLabel(show: true)
+        }
+    }
+    
+    private func animateScrollView(bottomInset: CGFloat) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottomInset, right: 0.0)
+        }, completion: nil)
+    }
+    
+    private func animateTitleLabel(show: Bool) {
+        self.titleLabel.text = show ? self.labelText : nil
+        UIView.animate(withDuration: 0.3) {
+            self.titleLabel.superview?.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func showKeyboard() {
+        self.searchTextField.becomeFirstResponder()
+    }
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 
@@ -123,6 +172,20 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         }
         if let movie = movie {
             self.presenter?.movieDidSelected(movie: movie)
+        }
+    }
+}
+
+extension HomeView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func searchDidChange() {
+        if let text = self.searchTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
+            self.presenter?.searchDidChange(text: text)
         }
     }
 }
